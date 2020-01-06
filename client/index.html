@@ -60,7 +60,36 @@
         <tfoot>
         </tfoot>
     </table>
-    <script src="app/index.js"></script>
+    <script src="app/domain/negociacao/Negociacao.js"></script>
+
+    <script>
+
+        n1 = new Negociacao(new Date(), 10, 2);
+        console.log(n1);
+        
+        const quantidade = n1.quantidade;
+        const data = n1.data;
+        const valor = n1.valor;
+        const volume = n1.volume;
+        n1._volume = 100;
+        
+        console.log('Valor: ', valor);
+        console.log('Quantidade: ', quantidade);
+        console.log('Volume: ', n1.volume);
+        console.log('Data: ', data);
+
+        const volum = n1.volume;
+        console.log('Volume alterado: ', n1._volume);
+        
+
+
+        n2 = new Negociacao()
+        console.log(n2);
+
+    </script>
+
 </body>
 
 </html>
+
+<!-- pag 64 -->
