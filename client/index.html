@@ -64,27 +64,26 @@
 
     <script>
 
-        n1 = new Negociacao(new Date(), 10, 2);
+        var hoje = new Date()
+        n1 = new Negociacao(hoje, 10, 2);
+        console.log('Data virgem: ', n1.data);
+        hoje.setDate(11)
+
+        console.log('Data atualizada: ', n1.data);
         console.log(n1);
-        
-        const quantidade = n1.quantidade;
-        const data = n1.data;
-        const valor = n1.valor;
-        const volume = n1.volume;
-        n1._volume = 100;
-        
-        console.log('Valor: ', valor);
-        console.log('Quantidade: ', quantidade);
-        console.log('Volume: ', n1.volume);
-        console.log('Data: ', data);
 
-        const volum = n1.volume;
-        console.log('Volume alterado: ', n1._volume);
-        
+        /* Teste */
 
+        function minhaFuncao() {
+            if (!nome) {
+                var nome = 'Flávio Almeida'
+            }
+            alert(nome);
+        }
 
-        n2 = new Negociacao()
-        console.log(n2);
+        minhaFuncao();
+
+        /* Fim do teste */
 
     </script>
 
@@ -92,4 +91,4 @@
 
 </html>
 
-<!-- pag 64 -->
+<!-- pag 79 -->
