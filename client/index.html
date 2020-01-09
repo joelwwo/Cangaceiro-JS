@@ -61,11 +61,12 @@
         </tfoot>
     </table>
     <script src="app/domain/negociacao/Negociacao.js"></script>
-
+    <script src="app/controllers/NegociacaoesController.js"></script>
+    <script src="app/app.js"></script>
     <script>
 
-        var hoje = new Date()
-        n1 = new Negociacao(hoje, 10, 2);
+        let hoje = new Date()
+        let n1 = new Negociacao(hoje, 10, 2);
         console.log('Data virgem: ', n1.data);
         hoje.setDate(11)
 
@@ -74,14 +75,7 @@
 
         /* Teste */
 
-        function minhaFuncao() {
-            if (!nome) {
-                var nome = 'Flávio Almeida'
-            }
-            alert(nome);
-        }
 
-        minhaFuncao();
 
         /* Fim do teste */
 
