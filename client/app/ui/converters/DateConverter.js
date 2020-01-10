@@ -1,6 +1,6 @@
 class DataConverter {
 
-    paraTexto(data) {
+    static paraTexto(data) {
 
         return data.getDate()
             + '/' + (data.getMonth() + 1)
@@ -8,7 +8,7 @@ class DataConverter {
 
     }
 
-    paraData(texto) {
+    static paraData(texto) {
         return new Date(...texto.split('-').map((item, indice) =>
             item - indice % 2));
     }
