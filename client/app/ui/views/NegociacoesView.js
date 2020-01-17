@@ -6,7 +6,7 @@ class NegociacoesView {
 
     }
 
-    template() {
+    template(model) {
         return `
         <table class="table table-hover table-bordered">
             <thead>
@@ -18,15 +18,26 @@ class NegociacoesView {
                 </tr>
             </thead>
             <tbody>
+            ${model.paraArray().map(negociacao =>
+            `
+            <tr>
+                <td>${DataConverter.paraTexto(negociacao.data)}</td>
+                <td>${negociacao.quantidade}</td>
+                <td>${negociacao.valor}</td>
+                <td>${negociacao.volume}</td>
+            `
+        ).join('')}
             </tbody>
             <tfoot>
+                <td colspan="3"></td>
+                <td>${model.volumeTotal}</td>
             </tfoot>
         </table>
         `
     }
 
-    update() {
-        this._elemento.innerHTML = this.template();
+    update(model) {
+        this._elemento.innerHTML = this.template(model);
     }
 
 }
