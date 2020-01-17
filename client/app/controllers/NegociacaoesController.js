@@ -48,4 +48,13 @@ class NegociacaoController {
 
     }
 
+    apaga() {
+
+        this._negociacoes.esvazia();
+        this._negociacoesView.update(this._negociacoes);
+        this._mensagem.texto = 'Negociações excluídas com sucesso!';
+        this._mensagemView.update(this._mensagem);
+
+    }
+
 }
