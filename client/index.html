@@ -57,8 +57,41 @@
     <script src="app/ui/models/Mensagem.js"></script>
     <script src="app/app.js"></script>
 
+    <script>
+
+        const negociacoes = new Proxy(new Negociacoes(), {
+
+            get(target, prop, receiver) {
+
+                if (typeof target[prop] == typeof Function && ['adiciona', 'esvazia'].includes(prop)) {
+
+                    return function () {
+                        console.log(`"${prop}" disparou a armadilha`);
+                        target[prop].apply(target, arguments);
+                    }
+
+                }
+                else {
+
+                    return target[prop]
+
+                }
+
+                console.log(`'${prop}' guarda '${target[prop]}' e receberar.`);
+
+
+            }
+
+        });
+
+        negociacoes.esvazia();
+
+        negociacoes.adiciona(new Negociacao(new Date(), 1, 100));
+
+    </script>
+
 </body>
 
 </html>
 
-<!-- pag 155 -->
+<!-- pag 213 -->

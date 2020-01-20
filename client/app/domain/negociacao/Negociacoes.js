@@ -2,6 +2,7 @@ class Negociacoes {
 
     constructor() {
         this._negociacoes = [];
+        Object.freeze(this);
     }
 
     adiciona(negociacao) {
@@ -25,7 +26,7 @@ class Negociacoes {
 
     esvazia() {
 
-        this._negociacoes = [];
+        this._negociacoes.length = 0;
 
     }
 
